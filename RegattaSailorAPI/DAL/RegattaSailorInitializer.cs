@@ -7,7 +7,7 @@ using RegattaSailorAPI.Models;
 
 namespace RegattaSailorAPI.DAL
 {
-    public class RegattaSailorInitializer : System.Data.Entity.CreateDatabaseIfNotExists<RegattaSailorContext>
+    public class RegattaSailorInitializer : System.Data.Entity.DropCreateDatabaseAlways<RegattaSailorContext>
     {
         protected override void Seed(RegattaSailorContext context)
         {
