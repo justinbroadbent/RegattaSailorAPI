@@ -35,7 +35,7 @@ namespace RegattaSailorAPI.DAL
 
             var divisions = new List<DivisionModel>
             {
-                new DivisionModel { Id = Guid.Parse("902862f6-05b5-451a-970a-3bec7f64a160"), Index = 1, Name = "Division 1", StartTime = (new DateTime(2017, 2, 1, 10, 00, 00)), Yachts = new List<YachtModel> { yachts[0], yachts[1] }, RaceId=races[0].Id }
+                new DivisionModel { Id = Guid.Parse("902862f6-05b5-451a-970a-3bec7f64a160"), Index = 1, Name = "Division 1", StartTime = (new DateTime(2017, 2, 1, 10, 00, 00)), Yachts = new List<YachtModel> { yachts[0], yachts[1] }, Race=races[0] }
             };
 
             divisions.ForEach(s => context.Divisions.Add(s));
