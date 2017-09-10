@@ -24,9 +24,9 @@ namespace RegattaSailorAPI.Models
         [DataMember]
         public DateTime? StartTime { get; set; }
 
+        [IgnoreDataMember]
+        public virtual RaceModel Race {get; set;}
         [DataMember]
-        public Guid RaceId { get; set; }
-        [ForeignKey("RaceId")]
-        public RaceModel Race {get; set;}
+        public virtual List<RaceLegModel> Legs { get; set; }
     }
 }

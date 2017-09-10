@@ -7,7 +7,7 @@ using RegattaSailorAPI.Models;
 
 namespace RegattaSailorAPI.DAL
 {
-    public class RegattaSailorInitializer : System.Data.Entity.CreateDatabaseIfNotExists<RegattaSailorContext>
+    public class RegattaSailorInitializer : System.Data.Entity.DropCreateDatabaseAlways<RegattaSailorContext>
     {
         protected override void Seed(RegattaSailorContext context)
         {
@@ -35,7 +35,7 @@ namespace RegattaSailorAPI.DAL
 
             var divisions = new List<DivisionModel>
             {
-                new DivisionModel { Id = Guid.Parse("902862f6-05b5-451a-970a-3bec7f64a160"), Index = 1, Name = "Division 1", StartTime = (new DateTime(2017, 2, 1, 10, 00, 00)), Yachts = new List<YachtModel> { yachts[0], yachts[1] }, RaceId=races[0].Id }
+                new DivisionModel { Id = Guid.Parse("902862f6-05b5-451a-970a-3bec7f64a160"), Index = 1, Name = "Division 1", StartTime = (new DateTime(2017, 2, 1, 10, 00, 00)), Yachts = new List<YachtModel> { yachts[0], yachts[1] }, Race=races[0] }
             };
 
             divisions.ForEach(s => context.Divisions.Add(s));
@@ -43,8 +43,8 @@ namespace RegattaSailorAPI.DAL
 
             var legs = new List<RaceLegModel>
             {
-                new RaceLegModel {Id = Guid.Parse("9e26a483-cb18-477e-9493-8ed86cd76d80"), Name="Leg 1", Race= races[0]  },
-                new RaceLegModel {Id = Guid.Parse("9cb0bee3-3931-4f0b-856b-95b612f3b795"), Name="Leg 2", Race= races[0]   }
+                new RaceLegModel {Id = Guid.Parse("9e26a483-cb18-477e-9493-8ed86cd76d80"), Name="Leg 1", Race= races[0], Divisions=divisions  },
+                new RaceLegModel {Id = Guid.Parse("9cb0bee3-3931-4f0b-856b-95b612f3b795"), Name="Leg 2", Race= races[0], Divisions=divisions  }
             };
 
             legs.ForEach(s => context.RaceLegs.Add(s));

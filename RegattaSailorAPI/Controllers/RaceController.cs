@@ -29,8 +29,9 @@ namespace RegattaSailorAPI.Controllers
         {
 
             RaceModel raceModel = db.Races
+                .Include(r => r.Divisions.Select(d => d.Legs.Select(l => l.LegResults.Select(rs => rs.Yacht))))
                 .Include(r => r.Divisions.Select(d => d.Yachts))
-                .Include(r => r.Legs.Select(l=> l.LegResults))
+                //.Include(r => r.Legs.Select(l=> l.LegResults))
                 .Where(r => r.Id == id)
                 .SingleOrDefault(r => r.Id == id);
 
