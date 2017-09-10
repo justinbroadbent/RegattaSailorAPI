@@ -26,5 +26,7 @@ namespace RegattaSailorAPI.Models
 
         [IgnoreDataMember]
         public virtual RaceModel Race {get; set;}
+        [DataMember]
+        public virtual List<RaceLegModel> Legs { get; set; }
     }
 }

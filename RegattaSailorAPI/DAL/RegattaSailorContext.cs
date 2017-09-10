@@ -33,6 +33,15 @@ namespace RegattaSailorAPI.DAL
                     dy.MapRightKey("DivisionRefId");
                     dy.ToTable("DivisionYacht");
                 });
+            modelBuilder.Entity<RaceLegModel>()
+            .HasMany<DivisionModel>(l => l.Divisions)
+            .WithMany(d => d.Legs)
+            .Map(dy =>
+            {
+                dy.MapLeftKey("LegRefId");
+                dy.MapRightKey("DivisionRefId");
+                dy.ToTable("DivisionLeg");
+            });
         }
     }
 }

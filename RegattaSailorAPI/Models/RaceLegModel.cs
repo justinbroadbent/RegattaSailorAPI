@@ -30,5 +30,8 @@ namespace RegattaSailorAPI.Models
         public virtual RaceModel Race { get; set; }
         [DataMember]
         public List<LegResultModel> LegResults { get; set; }
+
+        public virtual List<DivisionModel> Divisions { get; set; }
+
     }
 }

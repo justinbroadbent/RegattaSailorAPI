@@ -27,7 +27,9 @@ namespace RegattaSailorAPI.Models
         public int PhrfRating { get; set; }
         [DataMember]
         public string SkipperName { get; set; }
+        [IgnoreDataMember]
         public virtual List<DivisionModel> Divisions { get; set; }
+
 
     }
 }

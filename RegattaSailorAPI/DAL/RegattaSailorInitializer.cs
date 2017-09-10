@@ -43,8 +43,8 @@ namespace RegattaSailorAPI.DAL
 
             var legs = new List<RaceLegModel>
             {
-                new RaceLegModel {Id = Guid.Parse("9e26a483-cb18-477e-9493-8ed86cd76d80"), Name="Leg 1", Race= races[0]  },
-                new RaceLegModel {Id = Guid.Parse("9cb0bee3-3931-4f0b-856b-95b612f3b795"), Name="Leg 2", Race= races[0]   }
+                new RaceLegModel {Id = Guid.Parse("9e26a483-cb18-477e-9493-8ed86cd76d80"), Name="Leg 1", Race= races[0], Divisions=divisions  },
+                new RaceLegModel {Id = Guid.Parse("9cb0bee3-3931-4f0b-856b-95b612f3b795"), Name="Leg 2", Race= races[0], Divisions=divisions  }
             };
 
             legs.ForEach(s => context.RaceLegs.Add(s));

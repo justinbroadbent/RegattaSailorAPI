@@ -11,7 +11,7 @@ namespace RegattaSailorAPI.Models
         [DataMember]
         public Guid Id { get; set; }
         [DataMember]
-          public Guid YachtId
+        public Guid YachtId
         {
             get { return Yacht.Id; }
         }
